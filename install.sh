@@ -26,7 +26,7 @@ git config --global user.name "Eric Allard"
 
 # Pull down .dotfiles from GitHub (everlongtrail/.dotfiles)
 git clone --bare git@github.com:everlongtrail/.dotfiles.git $HOME/.dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
