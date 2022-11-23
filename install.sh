@@ -12,7 +12,7 @@
 
 echo "*** UPDATE MACHINE ***"
 # Update and get standard repository programs
-# sudo apt update && sudo apt full-upgrade -y
+apt update -y
 
 echo "*** ADD GITHUB FINGERPRINT TO KNOWN HOSTS ***"
 if ! grep github.com ~/.ssh/known_hosts > /dev/null
@@ -40,6 +40,7 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+config push --set-upstream origin master
 
 # Install apps
 function install {
@@ -58,7 +59,4 @@ install neovim
 install zsh
 install docker.io
 
-
-
-# don't change shell yet. do that later after you figure out how to setup your .dotfiles and have your .zshrc
-# chsh -s $(which zsh)
+chsh -s $(which zsh)
