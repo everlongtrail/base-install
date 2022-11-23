@@ -1,8 +1,7 @@
 #!/bin/env bash
 
-# base-install script for new Linux builds
-# Run this after installing Git. See below.
-# inspiration from https://github.com/victoriadrake/dotfiles
+# base-install: a script for new Linux builds
+# call install.sh from $HOME after installing Git. See below.
 
 # Pre-requisites:
 # 1. Install Git
