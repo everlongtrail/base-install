@@ -11,7 +11,7 @@
 
 echo "*** UPDATE MACHINE ***"
 # Update and get standard repository programs
-apt update -y
+sudo apt update -y
 
 echo "*** ADD GITHUB FINGERPRINT TO KNOWN HOSTS ***"
 if ! grep github.com ~/.ssh/known_hosts > /dev/null
