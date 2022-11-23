@@ -58,4 +58,5 @@ install neovim
 install zsh
 install docker.io
 
-chsh -s $(which zsh)
+echo "*** INSTALL COMPLETE ***"
+echo "Exit and relaunch terminal emulator."
