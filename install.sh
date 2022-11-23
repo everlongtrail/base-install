@@ -10,7 +10,7 @@
 # 3. Start ssh-agent and add ssh key
 # 3. Add ssh key to GitHub
 
-echo "*** UPDATE MACHINE ***\n"
+echo "*** UPDATE MACHINE ***"
 # Update and get standard repository programs
 # sudo apt update && sudo apt full-upgrade -y
 
@@ -20,13 +20,13 @@ then
      echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
 fi
 
-echo "*** SET GIT CONFIGS ***i\n"
+echo "*** SET GIT CONFIGS ***"
 git config --global user.email "21221061+everlongtrail@users.noreply.github.com"
 git config --global user.name "Eric Allard"
 
 # Pull down .dotfiles from GitHub (everlongtrail/.dotfiles)
+echo "*** PULL DOWN DOTFILES ***"
 git clone --bare git@github.com:everlongtrail/.dotfiles.git $HOME/.dotfiles
-#alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
@@ -41,6 +41,7 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 
+# Install apps
 function install {
   which $1 &> /dev/null
 
@@ -52,7 +53,7 @@ function install {
   fi
 }
 
-# Basics
+echo "*** INSTALLING APPS ***"
 install neovim
 install zsh
 install docker.io
