@@ -10,9 +10,17 @@
 # 3. Start ssh-agent and add ssh key
 # 3. Add ssh key to GitHub
 
+echo "*** UPDATE MACHINE ***\n"
 # Update and get standard repository programs
 # sudo apt update && sudo apt full-upgrade -y
 
+echo "*** ADD GITHUB FINGERPRINT TO KNOWN HOSTS ***"
+if ! grep github.com ~/.ssh/known_hosts > /dev/null
+then
+     echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
+fi
+
+echo "*** SET GIT CONFIGS ***i\n"
 git config --global user.email "21221061+everlongtrail@users.noreply.github.com"
 git config --global user.name "Eric Allard"
 
